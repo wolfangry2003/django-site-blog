@@ -1,0 +1,9 @@
+<a href="{% url link %}"
+   class="nav-link"
+   {% if request.resolver_match.url_name == link_name %}
+
+   {% endif %}
+>
+<i class="fa fa-{{ classes }}" aria-hidden="true"></i>
+<p>{{ content }}</p>
+</a>

@@ -1,0 +1,16 @@
+{% load static %}
+{% load jformat %}
+{% load tags %}
+
+<div class="navbar">
+    <div class="navbar-item form">
+      <form style="margin-left: 20px" action="{% url 'blog:search-view' %}" method="POST" > {% csrf_token %}
+        <input type="search" placeholder="جستجو..." name="search_query" required aria-label="Search">
+        <button type="submit"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End sidebar search formn-->
+  </div><!-- End sidebar -->
+
+<div class="navbar">
+    {% category_navbar %}
+</div>

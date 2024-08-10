@@ -1,0 +1,123 @@
+{% extends 'blog/base-new.html'%}
+
+{% block title %}
+	<title>نتیجه جستجو</title>
+{% endblock %}
+
+{% block sidebar %}
+    {% include 'blog/sidebar.html' %}
+{% endblock sidebar %}
+
+{% block main %}
+    {% if query %}
+        <!-- ======= Blog Section ======= -->
+     <section class="breadcrumbs">
+        <div class="container">
+
+          <div class="d-flex justify-content-between align-items-center">
+              <h2>جستجو برای "{{query}}" </h2>
+            <ol>
+              <li><a href="{% url 'blog:home' %}">خانه</a></li>
+              <li> {{ query }} </li>
+            </ol>
+          </div>
+
+        </div>
+      </section><!-- End Blog Section -->
+
+    <div>
+        <div>
+        <!-- check if there is a result in the database-->
+    {% if posts %}
+            <!-- loop through search query if there is a result -->
+        {% for article in posts %}
+        <section id="blog" class="blog">
+        <div class="container" data-aos="fade-up">
+
+          <div class="row">
+
+            <div class="col-lg-8 entries">
+
+              <article class="entry entry-single">
+                <div>
+                    <!-- return search query -->
+                    <h5 class="entry-title" >
+                      <a href="{% url 'blog:article-detail' article.slug  %}" style="color: black"><b>{{ article.title }}</b></a>
+                    </h5>
+                    <br>
+                    <div class="search-img">
+                        <a href="{% url 'blog:article-detail' article.slug  %}"><img src="{{ article.photo.url }}" alt="" class="img-fluid"></a>
+                    </div>
+                    <br>
+                <div class="entry-meta">
+                      <ul>
+                        <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="{% url 'blog:author' article.author %}">{{ article.author.get_full_name }}</a></li>
+                        <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="#"><time>{{ article.jpublish }}</time></a></li>
+                        <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="#">0</a></li>
+
+                      </ul>
+                    </div>
+                    <br>
+                    <div class="search-content">
+                        <a href="{% url 'blog:article-detail' article.slug  %}" style="color: black"><p>{{ article.excerpt }}</p></a>
+                    </div>
+                    <br>
+                    <div class="search-category">
+                        {% for cat in article.category.active %}
+                            <a href="{% url 'blog:category' cat.slug %}">#{{ cat.title }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+                </article>
+          </section>
+            {% endfor %}
+            <!-- return a message if there are no results found. -->
+        {% else %}
+            <h3>No search results found</h3>
+    {% endif %}
+        </div>
+    </div>
+        {% else %}
+            <h1>Please enter a search query</h1>
+    {% endif %}
+    
+    
+    <nav aria-label="Page navigation example">
+              {% if is_paginated %}
+              <ul class="pagination">
+                {% if page_obj.has_previous %}
+                <li class="page-item">
+                  <a class="page-link" href="?page={{page_obj.previous_page_number}}"
+                    >&laquo;</a
+                  >
+                </li>
+                {% else %}
+                <li class="page-item disabled">
+                  <a class="page-link" href="#">&laquo;</a>
+                </li>
+                {% endif %} {% for i in paginator.page_range %} {% if page_obj.number == i %}
+                <li class="page-item"><a class="page-link active">{{ i }}</a></li>
+                {% else %}
+                <li class="page-item">
+                  <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+                </li>
+                {% endif %} {% endfor %} {% if page_obj.has_next %}
+                <li class="page-item">
+                  <a href="?page={{page_obj.next_page_number}}" class="page-link"
+                    >&raquo;</a
+                  >
+                </li>
+                {% else %}
+                <li class="page-item disabled">
+                  <a class="page-link">&raquo;</a>
+                </li>
+                {% endif %}
+              </ul>
+              {% endif %}
+    </nav>
+
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}

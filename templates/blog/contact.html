@@ -1,0 +1,23 @@
+{% extends 'blog/base-new.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+	<title>ارتباط با ما</title>
+{% endblock %}
+
+{% block main %}
+	    <div class="container">
+        <div class="col-6">
+            <h1>فرم ارتباط با ما</h1>
+            <h2>{{ error }}</h2>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.email|as_crispy_field  }}
+                {{ form.message|as_crispy_field  }}
+                <br>
+                <input type="submit" class="btn btn-success" value="ارسال">
+            </form>
+        </div>
+    </div>
+{% endblock %}

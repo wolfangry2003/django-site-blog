@@ -1,0 +1,49 @@
+{% extends 'blog/base-new.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+	<title>ثبت نام</title>
+{% endblock %}
+
+{% block main %}
+	    <div class="container">
+        <div class="col-6">
+            <h1>فرم ثبت نام</h1>
+            <h2>{{ error }}</h2>
+            <form method="post" enctype="multipart/form-data">{% csrf_token %}
+                <div class="row">
+                    <div class="col-6">
+                        {{ form.username|as_crispy_field }}
+                        <span class="focus-input100" data-placeholder="نام کاربری"></span>
+                    </div>
+                     <div class="col-6">
+                        {{ form.email|as_crispy_field }}
+                         <span class="focus-input100" data-placeholder="ایمیل"></span>
+                    </div>
+                     <div class="col-6">
+                        {{ form.password1|as_crispy_field }}
+                         <span class="focus-input100" data-placeholder="گذرواژه"></span>
+                    </div>
+                    <div class="col-6">
+                        {{ form.password2|as_crispy_field }}
+                        <span class="focus-input100" data-placeholder="تکرار گذرواژه"></span>
+                    </div>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-success" {% url 'account:login' %}]>ثبت نام</button>
+                <div class="text-center p-t-115">
+							<span class="txt1">
+								حساب کاربری دارید؟ وارد شوید!
+							</span>
+						<a class="txt2 text-danger" href="{% url 'account:login' %}">ورود</a>
+					</div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'blog/base-new.html' %}
+
+{% block title %}
+	<title>عملیات با موفقیت انجام شد!</title>
+{% endblock %}
+
+{% block main %}
+    <div class="col-md-8 text-center mx-auto">
+        <div class="card card-success">
+            <div class="card-header">
+                <h3 class="card-title mb-0 float-left">پیام ارسال شد</h3>
+            </div>
+            <div class="card-body py-4">
+                <form method="post">
+                    <p class="py-2">ایمیل با موفقیت ارسال شد</p>
+                    <p class="py-2">جواب شما به صورت ایمیل در اسرع وقت ارسال خواهد شد</p>
+                    <p class="py-2">اگر پیام مشاهده نشد حتما بخش هرزنامه ایمیل خود را نیز چک کنید</p>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+	
+{% endblock %}

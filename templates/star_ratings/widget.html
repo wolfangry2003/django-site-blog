@@ -1,0 +1,12 @@
+{% extends "star_ratings/widget_base.html" %}
+{% load i18n %}
+{% block rating_detail %}
+
+    {% if not user.is_authenticated %}
+    	<div dir="rtl" align="right"><small>برای رای دادن باید وارد اکانت خود شوید.</small></div>
+    {% endif %} 
+    {% block rating_count %}
+    <div class="star-ratings-rating-count" dir="rtl" align="right">{% trans 'تعداد رای: ' %} <span class='star-ratings-rating-value'>{{ rating.count }}</span></div>
+    {% endblock rating_count %}
+{% endblock %}
+

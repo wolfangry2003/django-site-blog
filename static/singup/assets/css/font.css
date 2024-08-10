@@ -1,0 +1,51 @@
+@font-face {
+  font-family: vazir;
+  font-style: normal;
+  font-weight: 100;
+  src: url("../../Fonts/Vazir-Thin.eot");
+  src: url("../../Fonts/Vazir-Thin.woff") format("woff"),
+    url("../../Fonts/Vazir-Thin.ttf") format("ttf"),
+    url("../../Fonts/Vazir-Thin.woff2") format("woff2");
+}
+@font-face {
+  font-family: vazir;
+  font-style: normal;
+  font-weight: 300;
+  src: url("../../Fonts/Vazir-Light.eot");
+  src: url("../../Fonts/Vazir-Light.woff") format("woff"),
+    url("../../Fonts/Vazir-Light.ttf") format("ttf"),
+    url("../../Fonts/Vazir-Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: vazir;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../Fonts/Vazir-Regular.eot");
+  src: url("../../Fonts/Vazir-Regular.woff") format("woff"),
+    url("../../Fonts/Vazir-Regular.ttf") format("ttf"),
+    url("../../Fonts/Vazir-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: vazir;
+  font-style: normal;
+  font-weight: 950;
+  src: url("../../Fonts/Vazir-Black.eot");
+  src: url("../../Fonts/Vazir-Black.woff") format("woff"),
+    url("../../Fonts/Vazir-Black.ttf") format("ttf"),
+    url("../../Fonts/Vazir-Black.woff2") format("woff2");
+}
+
+#text-post{
+  font-family: 'Vazir', Arial, sans-serif;
+  direction: rtl;
+}
+
+#text-all-post{
+  font-family: 'Vazir', Arial, sans-serif;
+  direction: rtl;
+}
+
+.myfont{
+  font-family: 'Vazir', Arial, sans-serif;
+}

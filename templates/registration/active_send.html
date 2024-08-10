@@ -1,0 +1,23 @@
+{% extends 'registration/base-singup.html' %}
+
+{% block title %}
+	عملیات با موفقیت انجام شد!
+{% endblock %}
+
+{% block content %}
+    <div class="col-md-8 text-center mx-auto">
+        <div class="card card-success">
+            <div class="card-header">
+                <h3 class="card-title mb-0 float-left">ارسال ایمیل تایید اکانت</h3>
+            </div>
+            <div class="card-body py-4">
+                <form method="post">
+                    <p class="py-2">ایمیل تایید با موفقیت ارسال شد</p>
+                    <p class="py-2">لطفا پیام های ایمیل خود را چک کنید</p>
+                    <p class="py-2">اگر پیام مشاهده نشد حتما بخش هرزنامه ایمیل خود را نیز چک کنید</p>
+                    <p class="py-2">در صروت هر گونه مشکل <a href="#">با ما تماس بگیرید</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
