@@ -1,5 +1,5 @@
 """
-URL configuration for djangoProject1 project.
+URL configuration for sit_blog_me project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from djangoProject1 import settings
+from sit_blog_me import settings
 from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
