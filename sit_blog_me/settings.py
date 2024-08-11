@@ -105,7 +105,7 @@ MIDDLEWARE = [
     'blog.middleware.SaveIPAddressMiddleware',
 ]
 
-ROOT_URLCONF = 'djangoProject1.urls'
+ROOT_URLCONF = 'sit_blog_me.urls'
 
 TEMPLATES = [
     {
